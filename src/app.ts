@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import "dotenv/config";
 
 import initDB from "./config/mongoConfig";
+import logger from "./config/logger";
 
 initDB();
 
@@ -35,5 +36,5 @@ app.use(routes);
 const port = process.env.PORT || 3001;
 
 app.listen(port, () => {
-  console.log(`App listening at port ${port}.`);
+  logger.info(`App listening at port ${port}.`);
 });

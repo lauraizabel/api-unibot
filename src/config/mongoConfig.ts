@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import logger from "./logger";
 
 const { MONGO_URL } = process.env;
 
@@ -15,15 +16,15 @@ const initDB = async () => {
   const { connection } = mongoose;
 
   connection.on("connected", () => {
-    console.log("Mongoose conectado.");
+    logger.info("Mongoose conectado.");
   });
 
   connection.on("error", (err) => {
-    console.log(`Mongoose com error ${err}`);
+    logger.error(`Mongoose com error ${err}`);
   });
 
   connection.on("disconnected", () => {
-    console.log("Mongoose desconectado");
+    logger.info("Mongoose desconectado");
   });
 };
 
