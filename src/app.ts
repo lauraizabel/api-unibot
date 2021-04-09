@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
-
+import routes from "./routes";
+import bodyParser from "body-parser";
 import "dotenv/config";
 
 import initDB from "./config/mongoConfig";
@@ -8,6 +9,9 @@ import initDB from "./config/mongoConfig";
 initDB();
 
 const app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(cors());
 app.options("/", cors());
@@ -25,6 +29,8 @@ app.use((req, res, next) => {
     next();
   }
 });
+
+app.use(routes);
 
 const port = process.env.PORT || 3001;
 
