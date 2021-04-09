@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import CreateQuestionAndAnswerUseCase from "./CreateQuestionAndAnswerUseCase";
+import CreateQuestionAndAnswerUseCase from "./UpdateQuestionAndAnswerUseCase";
 
 export default class CreateQuestionAndAnswerController {
   constructor(
@@ -7,12 +7,12 @@ export default class CreateQuestionAndAnswerController {
   ) {}
 
   handle = async (req: Request, res: Response): Promise<Response> => {
-    const { body } = req;
+    const { body, params } = req;
     const { questions, answer } = body;
-
+    const { id } = params;
     try {
-      await this.createQuestionAndAnswerUseCase.execute(questions, answer);
-      return res.sendStatus(201);
+      await this.createQuestionAndAnswerUseCase.execute(questions, answer, id);
+      return res.sendStatus(200);
     } catch (err) {
       return res.status(400).json({
         message: err.message || "Unexpected error.",

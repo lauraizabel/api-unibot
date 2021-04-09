@@ -9,7 +9,7 @@ export default class GetAllQuestionsAndAnswersUseCase {
     const questionsAndAnswers = await this.questionsAndAnswersRepository.getAll();
 
     const formattedQuestionsAndAnswers = questionsAndAnswers.map(
-      ({ q, a }) => ({ q, a })
+      ({ q, a, _id }) => ({ q, a, _id })
     );
 
     return formattedQuestionsAndAnswers;

@@ -1,4 +1,5 @@
-import { Response } from "express";
+import { Request, Response } from "express";
+
 import CreateQuestionAndAnswerUseCase from "./GetAllQuestionsAndAnswersUseCase";
 
 export default class GetAllQuestionsAndAnswersController {
@@ -6,7 +7,7 @@ export default class GetAllQuestionsAndAnswersController {
     private createQuestionAndAnswerUseCase: CreateQuestionAndAnswerUseCase
   ) {}
 
-  handle = async (req: any, res: Response): Promise<Response> => {
+  handle = async (req: Request, res: Response): Promise<Response> => {
     try {
       const allQuestionsAndAnswers = await this.createQuestionAndAnswerUseCase.execute();
       return res.status(200).json(allQuestionsAndAnswers);
