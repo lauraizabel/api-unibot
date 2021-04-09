@@ -6,7 +6,6 @@ export default class MongoCategoryRepository
   implements IQuestionsAndAnswersRepository {
   async getAll() {
     const allQuestionAndAnswers = await QuestionsAndAnswersModel.find({});
-    console.log(allQuestionAndAnswers);
     return allQuestionAndAnswers;
   }
 
