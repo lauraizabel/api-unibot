@@ -9,6 +9,10 @@ export default class MongoCategoryRepository
     return allQuestionAndAnswers;
   }
 
+  async delete(id) {
+    await QuestionsAndAnswersModel.findOneAndDelete({ _id: id });
+  }
+
   async getOne(id: string): Promise<any> {
     const findQuestionAndAnswer = await QuestionsAndAnswersModel.findOne({
       _id: id,
