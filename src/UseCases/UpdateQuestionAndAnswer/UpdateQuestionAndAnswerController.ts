@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import CreateQuestionAndAnswerUseCase from "./UpdateQuestionAndAnswerUseCase";
+import UpdateQuestionAndAnswerUseCase from "./UpdateQuestionAndAnswerUseCase";
 
-export default class CreateQuestionAndAnswerController {
+export default class UpdateQuestionAndAnswerController {
   constructor(
-    private createQuestionAndAnswerUseCase: CreateQuestionAndAnswerUseCase
+    private updateQuestionAndAnswerUseCase: UpdateQuestionAndAnswerUseCase
   ) {}
 
   handle = async (req: Request, res: Response): Promise<Response> => {
@@ -11,7 +11,7 @@ export default class CreateQuestionAndAnswerController {
     const { questions, answer } = body;
     const { id } = params;
     try {
-      await this.createQuestionAndAnswerUseCase.execute(questions, answer, id);
+      await this.updateQuestionAndAnswerUseCase.execute(questions, answer, id);
       return res.sendStatus(200);
     } catch (err) {
       return res.status(400).json({
