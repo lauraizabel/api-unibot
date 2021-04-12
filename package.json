@@ -7,8 +7,7 @@
   "scripts": {
     "dev": "tsnd --transpile-only --ignore-watch node_modules --respawn src/app.ts",
     "start": "node dist/app.js",
-    "build": "tsc",
-    "knex:migrate": "knex --knexfile knexfile.ts migrate:latest"
+    "build": "tsc"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
