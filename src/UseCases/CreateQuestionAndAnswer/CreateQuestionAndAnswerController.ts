@@ -8,10 +8,14 @@ export default class CreateQuestionAndAnswerController {
 
   handle = async (req: Request, res: Response): Promise<Response> => {
     const { body } = req;
-    const { questions, answer } = body;
+    const { questions, answer, topic } = body;
 
     try {
-      await this.createQuestionAndAnswerUseCase.execute(questions, answer);
+      await this.createQuestionAndAnswerUseCase.execute(
+        questions,
+        answer,
+        topic
+      );
       return res.sendStatus(201);
     } catch (err) {
       return res.status(400).json({

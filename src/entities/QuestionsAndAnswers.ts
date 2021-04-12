@@ -5,6 +5,8 @@ export default class QuestionsAndAnswers {
 
   public a: string[];
 
+  public topic: string;
+
   constructor(props: QuestionsAndAnswers) {
     Object.assign(this, props);
   }

@@ -6,7 +6,11 @@ export default class CreateQuestionAndAnswerUseCase {
     private questionsAndAnswersRepository: IQuestionsAndAnswersRepository
   ) {}
 
-  execute = async (questions: string[], answer: string[]): Promise<void> => {
+  execute = async (
+    questions: string[],
+    answer: string[],
+    topic: string
+  ): Promise<void> => {
     if (!Array.isArray(questions) && !Array.isArray(answer)) {
       throw new Error(
         "CreateQuestionAndAnswerUseCase: invalid questions or answer."
@@ -16,6 +20,7 @@ export default class CreateQuestionAndAnswerUseCase {
     const newQA = new QuestionsAndAnswers({
       a: answer,
       q: questions,
+      topic,
     });
 
     await this.questionsAndAnswersRepository.save(newQA);

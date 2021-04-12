@@ -9,7 +9,8 @@ export default class CreateQuestionAndAnswerUseCase {
   execute = async (
     questions: string[],
     answer: string[],
-    id: string
+    id: string,
+    topic: string
   ): Promise<void> => {
     const oldQA = await this.questionsAndAnswersRepository.getOne(id);
 
@@ -26,6 +27,7 @@ export default class CreateQuestionAndAnswerUseCase {
     const newQA = new QuestionsAndAnswers({
       a: answer ?? oldQA.a,
       q: questions ?? oldQA.q,
+      topic: topic ?? oldQA.topic ?? "",
     });
 
     await this.questionsAndAnswersRepository.update(id, { ...newQA });

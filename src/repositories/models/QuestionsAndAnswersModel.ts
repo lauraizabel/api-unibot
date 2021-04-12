@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
 const QuestionsAndAnswersModel = new mongoose.Schema({
+  topic: {
+    type: String,
+    required: true,
+  },
   q: {
     type: Array,
     required: true,
@@ -13,7 +17,8 @@ const QuestionsAndAnswersModel = new mongoose.Schema({
 
 const QuestionsAndAnswers = mongoose.model(
   "QuestionsAndAnswers",
-  QuestionsAndAnswersModel
+  QuestionsAndAnswersModel,
+  "qaReddit"
 );
 
 export default QuestionsAndAnswers;
