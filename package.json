@@ -5,7 +5,9 @@
   "author": "Laura Izabel <lauraizabel8569@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "tsnd --transpile-only --ignore-watch node_modules --respawn src/app.ts",
+    "dev": "tsnd --transpile-only --ignore-watch node_modules --respawn src/app.ts",
+    "start": "node dist/app.js",
+    "build": "tsc",
     "knex:migrate": "knex --knexfile knexfile.ts migrate:latest"
   },
   "dependencies": {
