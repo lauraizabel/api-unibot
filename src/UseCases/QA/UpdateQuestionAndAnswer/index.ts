@@ -1,4 +1,4 @@
-import MongoQuestionsAndAnswersRepository from "../../repositories/implementations/MongoQuestionsAndAnswersRepository";
+import MongoQuestionsAndAnswersRepository from "../../../repositories/implementations/MongoQuestionsAndAnswersRepository";
 import UpdateQuestionAndAnswerController from "./UpdateQuestionAndAnswerController";
 import UpdateQuestionAndAnswerUseCase from "./UpdateQuestionAndAnswerUseCase";
 

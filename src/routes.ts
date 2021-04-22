@@ -1,10 +1,10 @@
 import { Router } from "express";
 
-import createQuestionAndAnswerController from "./UseCases/CreateQuestionAndAnswer";
-import getAllQuestionsAndAnswersController from "./UseCases/GetAllQuestionsAndAnswers";
-import updateQuestionAndAnswerController from "./UseCases/UpdateQuestionAndAnswer";
-import getOneQuestionAndAnswerController from "./UseCases/GetOneQuestionAndAnswer";
-import deleteQuestionAndAnswerController from "./UseCases/DeleteQuestionAndAnswer";
+import createQuestionAndAnswerController from "./UseCases/QA/CreateQuestionAndAnswer";
+import getAllQuestionsAndAnswersController from "./UseCases/QA/GetAllQuestionsAndAnswers";
+import updateQuestionAndAnswerController from "./UseCases/QA/UpdateQuestionAndAnswer";
+import getOneQuestionAndAnswerController from "./UseCases/QA/GetOneQuestionAndAnswer";
+import deleteQuestionAndAnswerController from "./UseCases/QA/DeleteQuestionAndAnswer";
 
 const router = Router();
 

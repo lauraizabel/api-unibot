@@ -1,5 +1,5 @@
-import { IQuestionsAndAnswersRepository } from "../../repositories/IQuestionsAndAnswersRepository";
-import QuestionsAndAnswers from "../../entities/QuestionsAndAnswers";
+import { IQuestionsAndAnswersRepository } from "../../../repositories/IQuestionsAndAnswersRepository";
+import QuestionsAndAnswers from "../../../entities/QuestionsAndAnswers";
 
 export default class CreateQuestionAndAnswerUseCase {
   constructor(
